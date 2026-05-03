@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import type { Place } from '@/lib/types'
-import { categoryColor, categoryLabel, formatDate, knowledgeScoreColor, knowledgeScoreLabel } from '@/lib/utils'
+import { categoryColor, categoryLabel, knowledgeScoreColor, knowledgeScoreLabel } from '@/lib/utils'
 import { MapPin, Camera, Star } from 'lucide-react'
 
 interface PlaceCardProps {

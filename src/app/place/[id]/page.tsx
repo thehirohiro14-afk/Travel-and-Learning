@@ -1,6 +1,6 @@
 'use client'
 
-import { use, useState, useEffect } from 'react'
+import { use, useState } from 'react'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { NavBar } from '@/components/NavBar'
@@ -25,14 +25,10 @@ export default function PlacePage({ params }: Props) {
   const [quizError, setQuizError] = useState<string | null>(null)
   const [insight, setInsight] = useState<string | null>(null)
   const [loadingInsight, setLoadingInsight] = useState(false)
-  const [quizResult, setQuizResult] = useState<{ score: number; total: number } | null>(null)
-  const [activeTab, setActiveTab] = useState<'info' | 'quiz'>('info')
-
-  useEffect(() => {
-    if (typeof window !== 'undefined' && window.location.hash === '#quiz') {
-      setActiveTab('quiz')
-    }
-  }, [])
+  const [, setQuizResult] = useState<{ score: number; total: number } | null>(null)
+  const [activeTab, setActiveTab] = useState<'info' | 'quiz'>(() =>
+    typeof window !== 'undefined' && window.location.hash === '#quiz' ? 'quiz' : 'info'
+  )
 
   if (!place) notFound()
 

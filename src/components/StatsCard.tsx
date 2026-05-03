@@ -1,5 +1,5 @@
 import type { UserStats } from '@/lib/types'
-import { levelFromXp, xpForLevel, xpProgressPercent } from '@/lib/utils'
+import { xpForLevel, xpProgressPercent } from '@/lib/utils'
 import { MapPin, Camera, Zap, Star } from 'lucide-react'
 
 interface StatsCardProps {

@@ -28,8 +28,10 @@ export default function PhotosPage() {
   }
 
   useEffect(() => {
-    if (session?.accessToken) loadPhotos()
-  }, [session])
+    if (!session?.accessToken) return
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    void loadPhotos()
+  }, [session?.accessToken])
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen">

@@ -50,10 +50,8 @@ export async function fetchGooglePhotos(accessToken: string, pageSize = 50): Pro
 
 // Google Photos API no longer returns location data.
 // This function attempts to reverse-geocode based on album names or exif when available.
-export async function groupPhotosByLocation(
-  photos: Photo[],
-  geocodeApiKey: string
-): Promise<Place[]> {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function groupPhotosByLocation(_photos: Photo[], _geocodeApiKey: string): Promise<Place[]> {
   // In a real implementation, location data would come from:
   // 1. Google Maps Timeline export
   // 2. EXIF GPS data embedded in photos (not exposed by Photos API)

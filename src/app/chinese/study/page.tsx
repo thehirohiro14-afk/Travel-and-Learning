@@ -7,6 +7,7 @@ import { NavBar } from '@/components/NavBar'
 import { ChineseFlashcard } from '@/components/ChineseFlashcard'
 import { HSK5_WORDS, WORD_CATEGORIES } from '@/lib/hsk5-words'
 import type { VocabProgress, WordCategory } from '@/lib/chinese-types'
+import { recordStudyActivity } from '@/lib/chinese-streak'
 import { ArrowLeft, Check, X, Eye, EyeOff, RotateCcw } from 'lucide-react'
 import { cn } from '@/lib/utils'
 
@@ -84,6 +85,7 @@ function StudyContent() {
     }
     setProgress(updated)
     saveProgress(updated)
+    recordStudyActivity()
 
     if (knew) setSessionCorrect((c) => c + 1)
     setSessionTotal((t) => t + 1)

@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { MapPin, Map, LayoutDashboard, Camera, LogOut } from 'lucide-react'
+import { MapPin, Map, LayoutDashboard, Camera, LogOut, BookOpen } from 'lucide-react'
 import { signOut, useSession } from 'next-auth/react'
 import { cn } from '@/lib/utils'
 
@@ -10,6 +10,7 @@ const navItems = [
   { href: '/dashboard', label: 'ダッシュボード', icon: LayoutDashboard },
   { href: '/map', label: 'マップ', icon: Map },
   { href: '/photos', label: '写真', icon: Camera },
+  { href: '/chinese', label: '中国語HSK5', icon: BookOpen },
 ]
 
 export function NavBar() {
